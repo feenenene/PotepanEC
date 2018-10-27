@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Configure Solidus Preferences
 # See http://docs.solidus.io/Spree/AppConfiguration.html for details
 
@@ -5,10 +7,10 @@ Spree.config do |config|
   # Core:
 
   # Default currency for new sites
-  config.currency = "USD"
+  config.currency = 'USD'
 
   # from address for transactional emails
-  config.mails_from = "store@example.com"
+  config.mails_from = 'store@example.com'
 
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
@@ -18,7 +20,6 @@ Spree.config do |config|
   # any inventory changes.
   # config.inventory_cache_threshold = 3
 
-
   # Frontend:
 
   # Custom logo for the frontend
@@ -26,7 +27,6 @@ Spree.config do |config|
 
   # Template to use when rendering layout
   # config.layout = "spree/layouts/spree_application"
-
 
   # Admin:
 
@@ -58,4 +58,4 @@ Spree::Api::Config.configure do |config|
   config.requires_authentication = true
 end
 
-Spree.user_class = "Spree::LegacyUser"
+Spree.user_class = 'Spree::LegacyUser'

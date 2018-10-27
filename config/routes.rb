@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # This line mounts Solidus's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
     get :about_us,                  to: 'sample#about_us'
     get :tokushoho,                 to: 'sample#tokushoho'
     get :privacy_policy,            to: 'sample#privacy_policy'
+    resources :products,            only: [:show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

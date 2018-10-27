@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Potepanec</title>
+    <title><%= yield(:title) %> | PotepanEC</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class = "main-wrapper">
+      <%= render 'layouts/header' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

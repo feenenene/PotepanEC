@@ -65,16 +65,19 @@
                     <!-- <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Share This</a></li> -->
                   </ul>
                   <h2><%= @product.name %></h2>
-                  <h3>1<%= @product.price %></h3>
-                  <p>Mauris lobortis augue ex, ut faucibus nisi mollis ac. Sed volutpat scelerisque ex ut ullamcorper. Cras at velit quis sapien dapibus laoreet a id odio. Sed sit amet accumsan ante, eu congue metus. Aenean eros tortor, cursus quis feugiat sed, vestibulum vel purus. Etiam aliquam turpis quis blandit finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor placerat lectus, facilisis ornare leo tincidunt vel. Duis rutrum felis felis, eget malesuada massa tincidunt a.</p>
+                  <h3><%= @product.price %></h3>
+                  <p><%= @product.description %></p>
+                  <% if @product.variants.any? %>
                   <span class="quick-drop">
                     <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                      <option value="0">S</option>
-                      <option value="1">M</option>
-                      <option value="2">L</option>
-                      <option value="3">XL</option>
+                    <% @product.variants.each_with_index do |variant, index| %>
+                      <option value=<%= index %>><%= variant.options_text %></option>
+                  <% end %>
                     </select>
                   </span>
+                  <% else %>
+                    <%= hidden_field_tag "variant_id", @product.master.id %>
+                  <% end %>
                   <span class="quick-drop resizeWidth">
                     <select name="guiest_id4" id="guiest_id4" class="select-drop">
                     <!--   <option value="0">Qty</option> -->

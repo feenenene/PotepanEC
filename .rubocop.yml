@@ -29,3 +29,6 @@ Style/FrozenStringLiteralComment:
 
 Documentation:
   Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded

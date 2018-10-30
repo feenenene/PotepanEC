@@ -32,3 +32,9 @@ Documentation:
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+
+Layout/EmptyLines:
+  Enabled: false

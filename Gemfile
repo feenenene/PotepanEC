@@ -52,6 +52,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rails-erd'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do

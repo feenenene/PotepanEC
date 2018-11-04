@@ -428,7 +428,6 @@ DEPENDENCIES
   rails-controller-testing
   rails-erd
   rspec-rails
-  rubocop
   rubocop-airbnb
   sass-rails (~> 5.0)
   solidus

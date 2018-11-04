@@ -10,9 +10,6 @@ RSpec.describe Potepan::ProductsController, type: :controller do
 
     it "responds successfully" do
       expect(response).to be_successful
-    end
-
-    it "returns a 200 response" do
       expect(response).to have_http_status "200"
     end
 

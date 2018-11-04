@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<% provide(:title, "SingleProduct") %>
+<% provide(:title, @product.name) %>
 
   <body>
 
@@ -46,7 +46,7 @@
                     <!-- <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Share This</a></li> -->
                   </ul>
                   <h2><%= @product.name %></h2>
-                  <h3><%= @product.price %></h3>
+                  <h3><%= @product.display_price %></h3>
                   <p><%= @product.description %></p>
                   <% if @product.variants.any? %>
                   <span class="quick-drop">

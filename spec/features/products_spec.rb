@@ -6,7 +6,7 @@ RSpec.feature "Products", :type => :feature do
     it "display each product details" do
       visit "potepan/products/#{product.id}"
       expect(page).to have_content "#{product.name}"
-      expect(page).to have_content "#{product.price}"
+      expect(page).to have_content "#{product.display_price}"
       expect(page).to have_content "#{product.description}"
     end
   end

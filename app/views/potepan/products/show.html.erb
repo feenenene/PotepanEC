@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 <% provide(:title, @product.name) %>
-
-  <body>
-
 <%= render 'light_section', product: @product %>
-
       <!-- MAIN CONTENT SECTION -->
       <section class="mainContent clearfix">
         <div class="container">
@@ -48,7 +42,7 @@
                   <h2><%= @product.name %></h2>
                   <h3><%= @product.display_price %></h3>
                   <p><%= @product.description %></p>
-                  <% if @product.variants.any? %>
+                  <% if @product.variants.present? %>
                   <span class="quick-drop">
                     <select name="guiest_id3" id="guiest_id3" class="select-drop">
                     <% @product.variants.each_with_index do |variant, index| %>
@@ -185,5 +179,3 @@
           </div>
         </div>
       </section>
-  </body>
-</html>

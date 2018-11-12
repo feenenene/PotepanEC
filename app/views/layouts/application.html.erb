@@ -5,20 +5,19 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     <%= render 'layouts/head' %>
   </head>
 
   <body>
     <div class = "main-wrapper">
       <%= render 'layouts/header' %>
-      <%= render 'layouts/navbar' %>
       <%= yield %>
-      <%= render 'layouts/copy_right' %>
       <%= render 'layouts/footer' %>
+      <%= render 'layouts/copy_right' %>
     </div>
       <%= render 'layouts/login_modal' %>
-      <%= render 'layouts/signup_modal' %>
-      <%= render 'layouts/view_modal' %>
+      <%= render 'layouts/sign_up_modal' %>
+      <%= render 'layouts/product_quick_view_modal' %>
+      <%= javascript_include_tag 'application' %>
   </body>
 </html>

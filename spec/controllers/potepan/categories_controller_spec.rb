@@ -12,32 +12,32 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
       get :show, params: { id: taxon_child.id }
     end
 
-    scenario "responds successfully" do
+    it "responds successfully" do
       expect(response).to be_successful
       expect(response).to have_http_status 200
     end
 
-    scenario "render show page" do
+    it "render show page" do
       expect(response).to render_template :show
     end
 
-    scenario "assigns taxonomies" do
+    it "assigns taxonomies" do
       expect(assigns(:taxonomies)).to match_array(taxonomy)
     end
 
-    scenario "assigns taxon" do
+    it "assigns taxon" do
       expect(assigns(:taxon)).to eq(taxon_child)
     end
 
-    scenario "assigns correct product" do
+    it "assigns correct product" do
       expect(assigns(:products)).to match_array(product1)
     end
 
-    scenario "assigns incorrect product" do
+    it "assigns incorrect product" do
       expect(assigns(:products)).not_to include(product2)
     end
 
-    scenario "send invalid params" do
+    it "send invalid params" do
       expect { get :show, params: { id: '' } }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end

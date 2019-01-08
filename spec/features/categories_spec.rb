@@ -13,7 +13,7 @@ RSpec.feature "Categories", type: :feature do
     visit potepan_category_path(shirts.id)
   end
 
-  scenario "カテゴリーおよび商品の適切な表示" do
+  scenario "display correct categories page" do
     expect(page).to have_title shirts.name
     within '.side-nav' do
       expect(page).to have_content taxonomy.name
@@ -29,7 +29,7 @@ RSpec.feature "Categories", type: :feature do
     end
   end
 
-  scenario "カテゴリーのリンクから適切な商品一覧ページに遷移する" do
+  scenario "move correct page from category link" do
     click_on bag.name
     expect(current_path).to eq potepan_category_path(bag.id)
     within '.productBox' do
@@ -40,7 +40,7 @@ RSpec.feature "Categories", type: :feature do
     end
   end
 
-  scenario "商品のリンクから適切な商品詳細ページに遷移する" do
+  scenario "move correct page from product link" do
     click_on product2.name
     expect(current_path).to eq potepan_product_path(product2.id)
     within '.singleProduct' do

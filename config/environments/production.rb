@@ -27,7 +27,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -91,4 +91,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  if Rails.env.production?
+    S3_CREDENTIALS={access_key_id: "AKIAJHBQYA4OLOLL7FOQ", secret_access_key: "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", bucket:"ayanyano", s3_host_name: "s3-ap-northeast-1.amazonaws.com"}
+  end
 end

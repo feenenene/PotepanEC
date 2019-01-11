@@ -34,5 +34,6 @@ module Potepanec
     config.generators.stylesheets    = false
     config.generators.javascripts    = false
     config.generators.helper         = false
+    config.assets.initialize_on_precompile = false
   end
 end

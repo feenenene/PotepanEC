@@ -12,7 +12,7 @@ gem 'rails', '~> 5.2.1'
 # use bootsnap
 gem 'bootsnap', require: false
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.5.2'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -51,6 +51,7 @@ group :development, :test do
   gem 'rails-erd'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'mysql2', '~> 0.5.2'
 end
 
 group :development do
@@ -61,6 +62,11 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
